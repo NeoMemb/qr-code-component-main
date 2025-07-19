@@ -1,0 +1,85 @@
+
+/* Feel free to remove these styles or customise in your own stylesheet 👍 */
+:root {
+    --slate-300: hsl(212, 45%, 89%);
+    --slate-500: hsl(216, 15%, 48%);
+    --slate-900: hsl(218, 44%, 22%);
+    --white: hsl(0, 0%, 100%);
+    --font-fam: 'Outfit', sans-serif;
+    --font-size-1: 20px;
+    --font-size-2: 15px;
+    --img-size: 325px;
+    --border-rad-1: 15px;
+    --border-rad-2: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.attribution { 
+    font-size: 11px;
+    position: fixed;
+    bottom: 1rem;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+body { 
+    font-family: var(--font-fam);
+    /* font-size: var(--font-size); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--slate-300);
+    height: 100vh;
+    align-content: center;
+    /* padding: 50px; */
+}
+
+main.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    border-radius: var(--border-rad-1);
+    background-color: var(--white);
+    width: 250px;
+    box-shadow:
+    2px 2px 10px 1px var(--slate-500)
+    ;
+}
+
+main.container div.qr-code > img {
+    width: var(--img-size);
+    border-radius: var(--border-rad-2);
+}
+
+/* I actually tested this nested method in CSS  */
+.text-section {
+    padding: 20px;
+    & .heading h1 {
+        font-size: var(--font-size-1);
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 0px 20px;
+    }
+    & .para p {
+        font-weight: 400;
+        padding: 10px 30px;
+    }
+}
+
+/* I'm using min-width of 320px instead of 375px, 'cus that is the smallest width a phone screen can have. */
+@media screen and (min-width: 320px) {
+    main.container {
+        width: 350px;
+    }
+    div.qr-code img {
+        width: 70%;
+    }
+}
